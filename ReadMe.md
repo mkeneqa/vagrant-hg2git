@@ -27,11 +27,12 @@
 	```
 
 
-#### Directory Structure	
-    
+## Directory Structure
 
 	├───Hg2GitConvert
-    │   	.hg2gitconvert.sh
+    │       .hg2gitconvert.sh
+    |       GIT
+    |       MERCURIAL    
     │   	
     │.gitignore
     │ReadMe.md
