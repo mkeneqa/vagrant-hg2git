@@ -17,6 +17,9 @@ Vagrant.configure("2") do |config|
   # map shared folders
   config.vm.synced_folder "./Hg2GitConvert" , "/home/vagrant/Hg2GitConvert",:nfs => { :mount_options => ["dmode=777","fmode=666"] }
   
+  # copy file from host to guest
+  # config.vm.provision "file",source:"./Hg2GitConvert/hg2gitconvert.sh",destination:"$HOME/hg2gitconvert.sh"
+
   config.vm.provision "shell", path: "./setup.sh"
 
 end
