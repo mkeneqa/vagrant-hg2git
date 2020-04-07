@@ -1,0 +1,4 @@
+*.log
+.vagrant/*
+Hg2GitConvert/GIT/*
+Hg2GitConvert/MERC/*
