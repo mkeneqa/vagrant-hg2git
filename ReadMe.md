@@ -48,7 +48,7 @@ After the VM has been provisioned, two additional directories should be created 
 
 These directories are automatically mapped to the vagrant server in the: `/home/vagrant` directory
 
-Place Mercurial repositories in the `**MERC**` directory from the windows Host
+Place Mercurial repositories in the **`MERC`** directory from the windows Host
 
 ### Step 2: Edit hg2gitconvert Script
 
@@ -61,13 +61,13 @@ REPO="MercRepoNameHere"
 
 ### Step 3: Do Conversion
 
-Log into the vagrant server via console/terminal using the following command. (Must be within the **`Hg2GitConvert`** directory where the **`Vagrantfile`** file is located)
+Log in to the vagrant server via console/terminal with the following command. (Must be within the **`Hg2GitConvert`** directory where the **`Vagrantfile`** file is located)
 
 ```
 vagrant ssh
 ```
 
-This log you in to the vagrant server. Then run the following command to convert the repository
+Once logged in run the following command to convert the repository
 
 ```
 sh Hg2GitConvert/hg2gitconvert.sh
