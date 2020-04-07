@@ -28,7 +28,9 @@
 
 
 #### Directory Structure
-	```
+	
+    ```
+
 	├───Hg2GitConvert
     │   	.hg2gitconvert.sh
     │   	
@@ -36,33 +38,32 @@
     │ReadMe.md
     │Vagrantfile
     │setup.sh
-	```
+	
+    ```
 
 
 ## Usage
 
 ### Step 1: Place Mercurial Repositories
 
-After the VM has been provisioned, two additional directories should be created within the **Hg2GitConvert** directory : **GIT** and **MERC**
+After the VM has been provisioned, two additional directories should be created within the `**Hg2GitConvert**` directory : `**GIT**` and `**MERC**`
 
 These directories are automatically mapped to the vagrant server in the: `/home/vagrant` directory
 
-Place Mercurial repositories in the **MERC** directory from the windows Host
+Place Mercurial repositories in the `**MERC**` directory from the windows Host
 
-### Step 2: Edit hg2gitconver Script
+### Step 2: Edit hg2gitconvert Script
 
-Edit the **Hg2GitConvert/hg2gitconvert.sh** script and add the name of the mercurial repository directory in the `REPO` variable.
+Edit the `**Hg2GitConvert/hg2gitconvert.sh**` script and update the name of the Mercurial repository directory in the `REPO` variable. **Important:** Make sure the name matches the Mercurial Repo directory.
 
 ```
-REPO="PutMercRepoNameHere"
+REPO="MercRepoNameHere"
 ```
-
-**NOTE:** Make sure the name matches the Mercurial Repo directory
 
 
 ### Step 3: Do Conversion
 
-Log into the vagrant server via console/terminal using the following command. (Must be within the host's **Hg2GitConvert** directory where the **Vagrantfile** is)
+Log into the vagrant server via console/terminal using the following command. (Must be within the `**Hg2GitConvert**` directory where the `**Vagrantfile**` file is located)
 
 ```
 vagrant ssh
@@ -74,4 +75,4 @@ This log you in to the vagrant server. Then run the following command to convert
 sh Hg2GitConvert/hg2gitconvert.sh
 ```
 
-You will see an output of the progress on the terminal. If there is no errors then the repository succesfully converted and is in the **Hg2GitConvert/GIT/** directory.
+You will see an output of the progress on the terminal. If there is no errors then the repository succesfully converted and is in the `**Hg2GitConvert/GIT/**` directory.
