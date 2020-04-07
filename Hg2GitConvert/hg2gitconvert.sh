@@ -1,17 +1,19 @@
 #!/bin/bash
 
-REPO="G3HeadCal"
+REPO_NAME="<<##REPO_NAME_GOES_HERE##>>"
 HOME_PATH="/home/vagrant"
+MERC_REPO_PATH=${HOME_PATH}/Hg2GitConvert/MERC/${REPO_NAME}
+GIT_REPO_PATH=${HOME_PATH}/Hg2GitConvert/GIT/${REPO_NAME}
 
-mkdir -p ${HOME_PATH}/Hg2GitConvert/GIT/${REPO}
+mkdir -p ${GIT_REPO_PATH}
 
-cd ${HOME_PATH}/Hg2GitConvert/MERC/${REPO}
+cd ${MERC_REPO_PATH}
 hg update
 
-cd ${HOME_PATH}/Hg2GitConvert/GIT/${REPO}
+cd ${GIT_REPO_PATH}
 git init
 
-sh ${HOME_PATH}/fast-export/hg-fast-export.sh -r ${HOME_PATH}/Hg2GitConvert/MERC/${REPO} --force
+sh ${HOME_PATH}/fast-export/hg-fast-export.sh -r ${MERC_REPO_PATH} --force
 git checkout
 
-echo "Conversion Completed and saved in:${HOME_PATH}/Hg2GitConvert/GIT/${REPO}"
+echo "Conversion Completed and saved in:${GIT_REPO_PATH}"
