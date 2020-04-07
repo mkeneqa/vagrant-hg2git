@@ -52,6 +52,7 @@ Place Mercurial repositories in the **`MERC`** directory from the windows Host
 ### Step 2: Edit hg2gitconvert Script
 
 Edit the **`Hg2GitConvert/hg2gitconvert.sh`** script and update the name of the Mercurial repository directory in the `REPO` variable. 
+
 **Important:** Make sure the name matches the Mercurial Repo directory.
 
 ```
