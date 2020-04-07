@@ -60,7 +60,7 @@ Copy and place Mercurial repositories in the **`MERC`** directory.
 
 ### Step 2: Edit hg2gitconvert Script
 
-Edit the **`Hg2GitConvert/convert.sh`** file and update the `REPO` variable with the appropriate Mercurial repository name. 
+Edit the **`Hg2GitConvert/convert.sh`** file and update the `REPO_NAME` variable with the appropriate Mercurial repository name. 
 
 
 ```
@@ -71,7 +71,7 @@ REPO_NAME="<<##REPO_NAME_GOES_HERE##>>"
 
 ### Step 3: Do Conversion
 
-Log in to the vagrant server using the console/terminal with the following command. __(This ust be within the **`Hg2GitConvert`** directory where the **`Vagrantfile`** file is located)__
+Log in to the vagrant server using the console/terminal with the following command. _(This ust be within the **`Hg2GitConvert`** directory where the **`Vagrantfile`** file is located)_
 
 ```
 vagrant ssh
@@ -90,7 +90,7 @@ You will see an output of the progress on the terminal. If there are no errors t
 
 #### Dos/Nix Line Endings Error
 
-When editing in Windows and executing the file you may run into this error: 
+When editing the convert file in Windows and then executing the file in Linux you may run into this error, Where the built in commands like `cd` and `git` aren't recognized: 
 
 ```
 : not foundrt/convert.sh: 2: Hg2GitConvert/convert.sh:
@@ -101,7 +101,9 @@ mkdir: cannot create directory ‘/home/vagrant\r’: Permission denied
 
 ```
 
-Where the built in commands like `cd` and `git` aren't executed. The reason this happens is due to Windows putting different line endings at the end of every new line. The easy fix is to run this command:
+The main reason this happens is due to Windows inserting different line endings at the end of every new line. 
+
+The easy fix is to run this command:
 
 ```
 dos2unix Hg2GitConvert/convert.sh
