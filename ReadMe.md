@@ -8,7 +8,20 @@
  - Enough RAM (VM will need 2GB)
 
 
-## Setup
+## Directory Structure
+
+	├───Hg2GitConvert
+    │       convert.sh
+    |       GIT
+    |       MERCURIAL    
+    │   	
+    │.gitignore
+    │ReadMe.md
+    │Vagrantfile
+    │setup.sh
+
+
+## Usage
 
  1. Clone this repository to local workspace
 	```
@@ -24,67 +37,32 @@
 	```
 	vagrant up
 	```
+	Two additional directories should be created within the **`Hg2GitConvert`** directory : 
+	- **`GIT`** 
+	- **`MERC`**
 
- 4. To Shutdown the vm run:
+ 4. Copy Over Mercurial Repositories
+
+	Copy and place all the Mercurial directories under the **`Hg2GitConvert/MERC`** directory
+
+ 5. Log in to Vagrant server
+
+	_(Make sure you are within the **`Hg2GitConvert`** directory where the **Vagrantfile** file is located)_
+
+	Log in to the vagrant server using the console/terminal with the following command.
+
 	```
-	vagrant halt	
+	vagrant ssh
+	```
+ 6. Covert Mercurial Repositories to Git
+
+	Once logged in run the following command to convert the repository
+
+	```
+	sh Hg2GitConvert/convert.sh
 	```
 
- 5. To remove the vm run:
-	```
-	vagrant destroy -f
-	```
-
-## Directory Structure
-
-	├───Hg2GitConvert
-    │       convert.sh
-    |       GIT
-    |       MERCURIAL    
-    │   	
-    │.gitignore
-    │ReadMe.md
-    │Vagrantfile
-    │setup.sh
-	
-    
-## Usage
-
-### Step 1: Place Mercurial Repositories
-
-After the VM has been provisioned, two additional directories should be created within the **`Hg2GitConvert`** directory : **`GIT`** and **`MERC`**.
-
-These directories are automatically mapped to the vagrant server in the: `/home/vagrant/Hg2GitConvert` directory.
-
-Copy and place Mercurial repositories in the **`MERC`** directory.
-
-### Step 2: Edit hg2gitconvert Script
-
-Edit the **`Hg2GitConvert/convert.sh`** file and update the `REPO_NAME` variable with the appropriate Mercurial repository name. 
-
-
-```
-REPO_NAME="<<##REPO_NAME_GOES_HERE##>>"
-```
-
-**Important:** Make sure the name matches the Mercurial Repo directory.
-
-### Step 3: Do Conversion
-
-Log in to the vagrant server using the console/terminal with the following command. _(This must be within the **`Hg2GitConvert`** directory where the **Vagrantfile** file is located)_
-
-```
-vagrant ssh
-```
-
-Once logged in run the following command to convert the repository
-
-```
-sh Hg2GitConvert/convert.sh
-```
-
-You will see an output of the progress on the terminal. If there are no errors then the mercurial repository succesfully converted to git and will be in the **`Hg2GitConvert/GIT/`** directory.
-
+	You will see an output of the progress on the terminal. If there are no errors then the mercurial repositories will have succesfully converted to git and will be found under the **`Hg2GitConvert/GIT/`** directory.
 
 ## Troubleshooting
 
@@ -110,3 +88,16 @@ dos2unix Hg2GitConvert/convert.sh
 ```
 
 Then run the `sh Hg2GitConvert/convert.sh` script normally again.
+
+
+#### To Shutdown the vagrant vm run:
+
+	```
+	vagrant halt	
+	```
+
+#### To remove the vagrant vm run::
+
+	```
+	vagrant destroy -f
+	```
