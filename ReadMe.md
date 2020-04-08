@@ -1,5 +1,9 @@
 # Vagrant Hg2Git Converter
 
+This Vagrant script provisions and automates a virtualbox VM for converting Mercurial repositories to Git.
+
+After setting up the Vagrant box, copy mercurial repositories over to the **Hg2GitConvert/MERC** directory and run the `sh Hg2GitConvert/convert.sh` command. This will convert and put the Git coversion in the **Hg2GitConvert/GIT** directory.
+
 ## Requirements
 
  - [Virtual Box](https://www.virtualbox.org/wiki/Downloads)     
@@ -23,17 +27,17 @@
 
 ## Usage
 
- 1. Clone this repository to local workspace
+ 1. ### Clone this repository to local workspace
 	```
 	git clone http://code.mistras.local/Software/VagrantHg2Git.git
 	```
 
- 2. Change directory to be within **`VagrantHg2Git`**
+ 2. ### Change directory to be within **`VagrantHg2Git`**
 	```
 	cd VagrantHg2Git
 	```
 		
- 3. Run Vagrant to automatically provision the VM
+ 3. ### Run Vagrant to automatically provision the VM
 	```
 	vagrant up
 	```
@@ -41,11 +45,11 @@
 	- **`GIT`** 
 	- **`MERC`**
 
- 4. Copy Over Mercurial Repositories
+ 4. ### Copy Over Mercurial Repositories
 
 	Copy and place all the Mercurial directories under the **`Hg2GitConvert/MERC`** directory
 
- 5. Log in to Vagrant server
+ 5. ### Log in to Vagrant server
 
 	_(Make sure you are within the **`Hg2GitConvert`** directory where the **Vagrantfile** file is located)_
 
@@ -54,7 +58,7 @@
 	```
 	vagrant ssh
 	```
- 6. Covert Mercurial Repositories to Git
+ 6. ### Covert Mercurial Repositories to Git
 
 	Once logged in run the following command to convert the repository
 
@@ -63,6 +67,8 @@
 	```
 
 	You will see an output of the progress on the terminal. If there are no errors then the mercurial repositories will have succesfully converted to git and will be found under the **`Hg2GitConvert/GIT/`** directory.
+
+---
 
 ## Troubleshooting
 
@@ -90,14 +96,14 @@ dos2unix Hg2GitConvert/convert.sh
 Then run the `sh Hg2GitConvert/convert.sh` script normally again.
 
 
-#### To Shutdown the vagrant vm run:
+#### To shutdown the vagrant vm run:
 
-	```
+	
 	vagrant halt	
-	```
+	
 
-#### To remove the vagrant vm run::
+#### To remove the vagrant vm run:
 
-	```
+	
 	vagrant destroy -f
-	```
+	
