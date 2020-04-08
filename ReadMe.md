@@ -109,4 +109,4 @@ The easy fix is to run this command:
 dos2unix Hg2GitConvert/convert.sh
 ```
 
-Then run the `sh Hg2GitConvert/convert.sh` script noramlly again.
+Then run the `sh Hg2GitConvert/convert.sh` script normally again.
