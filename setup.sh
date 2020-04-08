@@ -13,7 +13,6 @@ source /home/vagrant/.profile
 # create these sub directories
 mkdir -p /home/vagrant/Hg2GitConvert/GIT
 mkdir -p /home/vagrant/Hg2GitConvert/MERC
-mkdir -p /home/vagrant/Hg2GitConvert/MERC_DONE
 
 # download the fast export repo
 cd /home/vagrant
