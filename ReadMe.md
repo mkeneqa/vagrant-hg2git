@@ -10,7 +10,7 @@
 
 ## Setup
 
- 1. Clone this repository to local work space
+ 1. Clone this repository to local workspace
 	```
 	git clone http://code.mistras.local/Software/VagrantHg2Git.git
 	```
@@ -71,7 +71,7 @@ REPO_NAME="<<##REPO_NAME_GOES_HERE##>>"
 
 ### Step 3: Do Conversion
 
-Log in to the vagrant server using the console/terminal with the following command. _(This ust be within the **`Hg2GitConvert`** directory where the **`Vagrantfile`** file is located)_
+Log in to the vagrant server using the console/terminal with the following command. _(This must be within the **`Hg2GitConvert`** directory where the **Vagrantfile** file is located)_
 
 ```
 vagrant ssh
@@ -90,18 +90,18 @@ You will see an output of the progress on the terminal. If there are no errors t
 
 #### Dos/Nix Line Endings Error
 
-When editing the convert file in Windows and then executing the file in Linux you may run into this error, Where the built in commands like `cd` and `git` aren't recognized: 
+After editing the `convert.sh` file in Windows and then executing it in Linux you may run into this error, Where the built in commands like `cd` and `git` aren't recognized: 
 
 ```
 : not foundrt/convert.sh: 2: Hg2GitConvert/convert.sh:
 : not foundrt/convert.sh: 7: Hg2GitConvert/convert.sh:
 mkdir: cannot create directory ‘/home/vagrant\r’: Permission denied
 : not foundrt/convert.sh: 9: Hg2GitConvert/convert.sh:
-/Hg2GitConvert/MERC/Revenue-Dashboard't cd to /home/vagrant
+/Hg2GitConvert/MERC/MyCoolRepo't cd to /home/vagrant
 
 ```
 
-The main reason this happens is due to Windows inserting different line endings at the end of every new line. 
+This happens because Windows inserts a different line endings at the end of every new line from unix. 
 
 The easy fix is to run this command:
 
