@@ -29,7 +29,7 @@ After setting up the Vagrant box, copy mercurial repositories over to the **Hg2G
 
  1. #### Clone this repository to local workspace
 	```
-	git clone http://code.mistras.local/Software/VagrantHg2Git.git
+	git clone https://github.com/mkeneqa/vagrant-hg2git.git
 	```
 
  2. #### Change directory to be within **`VagrantHg2Git`**
