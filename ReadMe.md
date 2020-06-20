@@ -74,7 +74,7 @@ After setting up the Vagrant box, copy mercurial repositories over to the **Hg2G
 
 #### Dos/Nix Line Endings Error
 
-After editing the `convert.sh` file in Windows and then executing it in Linux you may run into this error, Where the built in commands like `cd` and `git` aren't recognized: 
+You may run into this error: 
 
 ```
 : not foundrt/convert.sh: 2: Hg2GitConvert/convert.sh:
@@ -85,7 +85,7 @@ mkdir: cannot create directory ‘/home/vagrant\r’: Permission denied
 
 ```
 
-This happens because Windows inserts a different line endings at the end of every new line from unix. 
+This happens because Windows inserts a different line endings at the end of every new line from unix and the built in commands like `cd` and `git` aren't being recognized.
 
 The easy fix is to run this command:
 
@@ -93,8 +93,11 @@ The easy fix is to run this command:
 dos2unix Hg2GitConvert/convert.sh
 ```
 
-Then run the `sh Hg2GitConvert/convert.sh` script normally again.
+and Then run this:
 
+```
+sh Hg2GitConvert/convert.sh
+```
 
 #### To shutdown the vagrant vm run:
 
