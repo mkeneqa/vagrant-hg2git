@@ -17,7 +17,7 @@ After setting up the Vagrant box, copy mercurial repositories over to the **Hg2G
 	├───Hg2GitConvert
     │       convert.sh
     |       GIT
-    |       MERCURIAL    
+    |       MERC
     │   	
     │.gitignore
     │ReadMe.md
